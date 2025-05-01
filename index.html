@@ -1,18 +1,35 @@
-<h1>🎉 Myanmar Week Photobooth 🎉</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Myanmar Week Photobooth</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🎉 Myanmar Week Photobooth 🎉</h1>
 
-<button id="startCam">🎥 Turn Camera ON</button>
-<button id="stopCam">🛑 Turn Camera OFF</button>
+  <button id="startCam">🎥 Turn Camera ON</button>
+  <button id="stopCam">🛑 Turn Camera OFF</button>
 
-<label for="frameSelect">🎨 Choose a Frame:</label>
-<select id="frameSelect">
-  <option value="overlay1.png">Classic</option>
-  <option value="overlay2.png">Fun</option>
-  <option value="overlay3.png">Fancy</option>
-</select>
+  <label for="frameSelect">🎨 Choose a Frame:</label>
+  <select id="frameSelect">
+    <option value="overlay1.png">Classic</option>
+    <option value="overlay2.png">Fun</option>
+    <option value="overlay3.png">Fancy</option>
+  </select>
+  
+  <br />
+  
+  <img id="framePreview" src="overlay1.png" alt="Frame Preview" style="max-width: 100%; width: 320px; margin: 10px auto; display: block;" />
 
-<video id="video" autoplay playsinline></video>
+  <video id="video" autoplay playsinline></video>
 
-<button id="snap">📸 Take Photo</button>
-<canvas id="canvas"></canvas>
+  <button id="snap">📸 Take Photo</button>
+  <canvas id="canvas"></canvas>
 
-<a id="download" download="event-photo.png">📥 Download</a>
+  <a id="download" download="event-photo.png">📥 Download</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
