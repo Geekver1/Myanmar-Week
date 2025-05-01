@@ -54,7 +54,6 @@ snapBtn.addEventListener('click', () => {
     downloadLink.href = dataURL;
   };
 
-  // If the overlay is already loaded
   if (overlay.complete) {
     ctx.drawImage(overlay, 0, 0, canvas.width, canvas.height);
     const dataURL = canvas.toDataURL('image/png');
