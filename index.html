@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html>
 <head>
@@ -14,10 +12,39 @@
         </h1>
     </div>
     <div>
+        
         <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" id="camera-toggle">
             <span class="slider round"></span>
         </label>
+        
     </div>
+    <div>
+        <label for="frameSelect">🎨 Choose a Frame:</label>
+        <select id="frameSelect">
+        <option value="overlay1.png">Classic</option>
+        <option value="overlay2.png">Fun</option>
+        <option value="overlay3.png">Fancy</option>
+        </select>
+    </div> 
+    <div class="main">
+        <div class="cameraframe">
+            <video id="camera-feed" width="320" height="240" autoplay muted></video>
+            <img id="liveFrame" src="overlay1.png"  alt="Live Frame" />
+        </div>
+        <div class="control-buttons">
+            <div>
+                <button id="switchCam">🔄</button>
+                <button id="snap">📸 snap</button>
+            </div>
+        </div>
+    </div>
+    <div class="result">
+        <canvas id="canvas"></canvas>
+    </div>
+    <div class="downloadbutton">
+        <a id="download">📥 Download</a>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
