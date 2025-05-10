@@ -16,11 +16,11 @@ overlay.src = frameSelect.value;
 let usingFrontCamera = true;
 let currentDeviceId = null;
 
-/* camera on 
+/* camera on */
 /checkbox.addEventListener('change', async () => {
 if (checkbox.checked) {
     try {
-    stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+    stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: facingMode } }, audio: false });
     video.srcObject = stream;
     } catch (err) {
     console.error("Error accessing camera:", err);
@@ -32,22 +32,8 @@ if (checkbox.checked) {
     stream = null;
     }
 }
-});*/
-checkbox.addEventListener('change', async () => {
-  if (checkbox.checked) {
-    try {
-      await startCamera(usingFrontCamera ? 'user' : 'environment');
-    } catch (err) {
-      console.error("Error accessing camera:", err);
-    }
-  } else {
-    if (stream) {
-      stream.getTracks().forEach(track => track.stop());
-      video.srcObject = null;
-      stream = null;
-    }
-  }
 });
+
 /* turn camera*/
 switchCamBtn.addEventListener('click', () => {
   usingFrontCamera = !usingFrontCamera;
