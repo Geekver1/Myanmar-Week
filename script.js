@@ -20,7 +20,7 @@ let currentDeviceId = null;
 /checkbox.addEventListener('change', async () => {
 if (checkbox.checked) {
     try {
-    stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: { ideal: facingMode } }, audio: false });
+    stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
     video.srcObject = stream;
     } catch (err) {
     console.error("Error accessing camera:", err);
